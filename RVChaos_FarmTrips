@@ -1,0 +1,66 @@
+local Teleporting = false
+game.Players.LocalPlayer.OnTeleport:Connect(function()
+if not Teleporting then
+Teleporting  = true
+queue_on_teleport([[
+
+local function Farm()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkipTutorialVote"):FireServer()
+    game.Players.LocalPlayer.Character.HumanoidRootPart:PivotTo(CFrame.new(3744, 152, -8659))
+    task.wait(1)
+    local End = workspace.Map.Deco:FindFirstChild("FinalRV", true)
+    task.wait(.5)
+    workspace.CurrentCamera.CFrame = End:GetPivot() - (End:GetPivot().LookVector * 15)
+    task.wait(.1)
+    local Prompt = End.Body.ProximityPrompt
+    Prompt.Enabled = true
+    Prompt.MaxActivationDistance = 9e9
+    Prompt.HoldDuration = 0.1
+
+    game.Players.LocalPlayer.leaderstats.Trips.Changed:Connect(function()
+        game:GetService("TeleportService"):Teleport(105616876618169)
+    end)
+    while task.wait() do
+    fireproximityprompt(Prompt)
+    end
+end
+
+if game.PlaceId ~= 105616876618169 then
+    game:GetService("TeleportService"):Teleport(105616876618169)
+else
+    Farm()
+end
+
+]])
+
+
+end
+end)
+
+
+local function Farm()
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkipTutorialVote"):FireServer()
+    game.Players.LocalPlayer.Character.HumanoidRootPart:PivotTo(CFrame.new(3744, 152, -8659))
+    task.wait(1)
+    local End = workspace.Map.Deco:FindFirstChild("FinalRV", true)
+    task.wait(.5)
+    workspace.CurrentCamera.CFrame = End:GetPivot() - (End:GetPivot().LookVector * 15)
+    task.wait(.1)
+    local Prompt = End.Body.ProximityPrompt
+    Prompt.Enabled = true
+    Prompt.MaxActivationDistance = 9e9
+    Prompt.HoldDuration = 0.1
+
+    game.Players.LocalPlayer.leaderstats.Trips.Changed:Connect(function()
+        game:GetService("TeleportService"):Teleport(105616876618169)
+    end)
+    while task.wait() do
+    fireproximityprompt(Prompt)
+    end
+end
+
+if game.PlaceId ~= 105616876618169 then
+    game:GetService("TeleportService"):Teleport(105616876618169)
+else
+    Farm()
+end
